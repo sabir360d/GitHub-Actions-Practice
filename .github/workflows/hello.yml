@@ -25,6 +25,3 @@ jobs: # Defines jobs to be run in the workflow
 
       - name: Show OS # Step to display the operating system of the runner
         run: echo "Runner OS:${{ runner.os }}" # Command to display the operating system of the runner using GitHub context
-
-      - name: Force Failure # Step to intentionally fail the workflow
-        run: exit 1 # Command to exit with a non-zero status to force the workflow to fail  
