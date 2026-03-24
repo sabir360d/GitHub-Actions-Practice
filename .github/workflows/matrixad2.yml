@@ -9,7 +9,7 @@ jobs:
       fail-fast: true # If one job fails, the others will be canceled
       matrix:
         os: [ubuntu-latest, windows-latest]
-        python-version: [3.10, 3.11, 3.12]
+        python-version: ["3.10", "3.11", "3.12"]
 
         exclude: # Exclude specific combinations of OS and Python version
           - os: windows-latest # Exclude Windows with Python 3.10
