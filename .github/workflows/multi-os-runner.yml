@@ -2,7 +2,7 @@ name: Multi OS Test # Multi OS Test Workflow
 
 on: [push]
 
-jobs:
+jobs: # Define jobs for different operating systems
   ubuntu-job:
     runs-on: ubuntu-latest
     steps:
