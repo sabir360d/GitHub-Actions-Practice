@@ -12,6 +12,20 @@ jobs: # Define jobs for different operating systems
           hostname
           whoami
 
+      - name: Check Pre-installed Tools   # 👈 Task 2 added here
+        run: |
+          echo "Docker Version:"
+          docker --version
+
+          echo "Python Version:"
+          python3 --version
+
+          echo "Node Version:"
+          node --version
+
+          echo "Git Version:"
+          git --version
+          
   windows-job:
     runs-on: windows-latest
     steps:
