@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     strategy:
-      fail-fast: false # If one job fails, the others will continue to run
+      fail-fast: true # If one job fails, the others will be canceled
       matrix:
         os: [ubuntu-latest, windows-latest]
         python-version: [3.10, 3.11, 3.12]
