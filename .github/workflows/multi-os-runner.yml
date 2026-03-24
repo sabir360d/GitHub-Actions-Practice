@@ -1,45 +1,33 @@
-name: Multi OS Test # Multi OS Test Workflow
+name: Multi-OS Runner Demo
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
 
-jobs: # Define jobs for different operating systems
+jobs:
   ubuntu-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Details
+      - name: Print System Info
         run: |
-          echo "OS: Ubuntu"
-          hostname
-          whoami
+          echo "OS: $(uname -a)"
+          echo "Hostname: $(hostname)"
+          echo "User: $(whoami)"
 
-      - name: Check Pre-installed Tools   # 👈 Task 2 added here
-        run: |
-          echo "Docker Version:"
-          docker --version
-
-          echo "Python Version:"
-          python3 --version
-
-          echo "Node Version:"
-          node --version
-
-          echo "Git Version:"
-          git --version
-          
   windows-job:
     runs-on: windows-latest
     steps:
-      - name: Print Details
+      - name: Print System Info
         run: |
-          echo OS: Windows
+          echo OS: %OS%
           hostname
-          whoami
+          echo User: %USERNAME%
 
   macos-job:
     runs-on: macos-latest
     steps:
-      - name: Print Details
+      - name: Print System Info
         run: |
-          echo "OS: macOS"
-          hostname
-          whoami
+          echo "OS: $(uname -a)"
+          echo "Hostname: $(hostname)"
+          echo "User: $(whoami)"
