@@ -1,0 +1,18 @@
+name: Manual Workflow # Name of the workflow, displayed in the GitHub Actions UI
+
+on: # Triggered manually via the GitHub UI
+  workflow_dispatch: # Allows for manual triggering of the workflow
+    inputs:    # Define input parameters for the workflow
+      environment:  # Input parameter for environment selection
+        description: "Choose environment" # Description for the input parameter
+        required: true # Make the input parameter required
+        default: "staging" # Default value for the input parameter
+
+jobs: # Define the jobs to be run in this workflow
+  manual-job: # Name of the job
+    runs-on: ubuntu-latest # Specify the runner environment
+
+    steps: # Define the steps to be executed in the job
+      - name: Print Environment # Name of the step
+        run: echo "Deploying to ${{ github.event.inputs.environment }}" # Command to print the selected environment
+        
